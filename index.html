@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>NFL Season Simulator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =============================== -->
+    <!-- HEADER -->
+    <!-- =============================== -->
+
+    <div class="hero">
+    <h1>NFL Season Simulator</h1>
+
+    <p>
+        Draft your team. Build a powerhouse.
+        Chase a perfect 17-0 season.
+    </p>
+</div>
+
+
+    <main>
+
+        <!-- =============================== -->
+        <!-- DRAFT SECTION -->
+        <!-- =============================== -->
+
+        <section id="draft-section">
+
+            <h2>Build Your Team</h2>
+
+            <p>
+                Randomize an NFL team and choose one eligible
+                player from its roster.
+            </p>
+
+
+            <!-- YOUR ROSTER -->
+
+            <h3>Your Roster</h3>
+
+            <div id="roster-grid">
+
+                <div id="roster-QB">
+                    <strong>QB:</strong>
+                    <span>Empty</span>
+                </div>
+
+                <div id="roster-RB1">
+                    <strong>RB 1:</strong>
+                    <span>Empty</span>
+                </div>
+
+                <div id="roster-RB2">
+                    <strong>RB 2:</strong>
+                    <span>Empty</span>
+                </div>
+
+                <div id="roster-WR1">
+                    <strong>WR 1:</strong>
+                    <span>Empty</span>
+                </div>
+
+                <div id="roster-WR2">
+                    <strong>WR 2:</strong>
+                    <span>Empty</span>
+                </div>
+
+                <div id="roster-TE">
+                    <strong>TE:</strong>
+                    <span>Empty</span>
+                </div>
+
+                <div id="roster-FLEX">
+                    <strong>FLEX:</strong>
+                    <span>Empty</span>
+                </div>
+
+                <div id="roster-DEF">
+                    <strong>Defense:</strong>
+                    <span>Empty</span>
+                </div>
+
+                <div id="roster-K">
+                    <strong>Kicker:</strong>
+                    <span>Empty</span>
+                </div>
+
+            </div>
+
+
+            <!-- RANDOM TEAM -->
+
+            <div id="draft-controls">
+
+    <button id="randomize-team-button">
+        Spin for NFL Team
+    </button>
+
+    <button
+        id="respin-team-button"
+        style="display: none;"
+    >
+        Use Respin
+    </button>
+
+</div>
+
+
+            <!-- TEAM THAT WAS RANDOMIZED -->
+
+            <div id="random-team-display">
+
+                <h3>Random Team</h3>
+
+                <p>
+                    Click the button above to get your first team.
+                </p>
+
+            </div>
+
+
+            <!-- PLAYERS AVAILABLE FROM THAT TEAM -->
+
+            <div id="player-options"></div>
+
+        </section>
+
+
+        <!-- =============================== -->
+        <!-- REGULAR SEASON -->
+        <!-- =============================== -->
+
+        <section
+            id="season-section"
+            style="display: none;"
+        >
+
+            <h2 class="season-page-title">
+    Regular Season
+</h2>
+
+
+<!-- =============================== -->
+<!-- SEASON DASHBOARD TOP -->
+<!-- =============================== -->
+
+<div class="season-dashboard-top">
+
+    <!-- YOUR TEAM -->
+
+    <div class="season-overview-card">
+
+        <div class="season-card-label">
+            YOUR TEAM
+        </div>
+
+        <div class="season-overview-grid">
+
+            <div class="season-metric">
+                <p id="team-rating-display">
+                    Team Rating: --
+                </p>
+            </div>
+
+            <div class="season-metric">
+                <p id="team-record-display">
+                    Record: 0-0
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CURRENT WEEK -->
+
+    <div
+        id="week-controls"
+        class="current-week-card"
+    >
+
+        <div class="season-card-label">
+            CURRENT WEEK
+        </div>
+
+        <h2 id="current-week-title">
+            Week 1
+        </h2>
+
+        <button id="simulate-week-button">
+            Simulate Week
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =============================== -->
+<!-- WEEK RESULTS -->
+<!-- =============================== -->
+
+<div
+    id="week-results"
+    class="week-results-panel"
+></div>
+
+
+<!-- =============================== -->
+<!-- STANDINGS -->
+<!-- =============================== -->
+
+<div
+    id="standings-section"
+    class="standings-card"
+>
+
+    <div class="standings-header">
+
+        <h2>League Standings</h2>
+
+        <span>
+            32 Teams
+        </span>
+
+    </div>
+
+
+    <div class="standings-scroll">
+
+        <div id="standings-display"></div>
+
+    </div>
+
+</div>
+
+
+            <!-- PLAYER SEASON STATS -->
+
+            <div id="end-season-controls" style="display: none;">
+
+    <button id="continue-playoffs-button">
+        View Season Recap
+    </button>
+
+</div>
+
+        </section>
+
+
+<!-- =============================== -->
+<!-- SEASON RECAP -->
+<!-- =============================== -->
+
+<section
+    id="season-recap-section"
+    style="display: none;"
+>
+
+    <h2>Regular Season Complete</h2>
+
+    <div id="final-season-summary"></div>
+
+
+    <h2>Your Season Stats</h2>
+
+    <div id="season-stats-display"></div>
+
+
+    <button id="enter-playoffs-button">
+        Enter Playoffs
+    </button>
+
+</section>
+
+
+        <!-- =============================== -->
+        <!-- PLAYOFFS -->
+        <!-- =============================== -->
+
+        <section
+    id="playoffs-section"
+    style="display: none;"
+>
+
+    <h2>Playoffs</h2>
+
+    
+
+    <div id="playoff-bracket"></div>
+
+            <button id="simulate-playoff-button">
+                Simulate Playoff Round
+            </button>
+
+            <div id="playoff-results"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =============================== -->
+    <!-- JAVASCRIPT -->
+    <!-- =============================== -->
+
+    <script src="players.js"></script>
+    <script src="teams.js"></script>
+    <script src="draft.js"></script>
+    <script src="season.js"></script>
+
+</body>
+
+</html>
